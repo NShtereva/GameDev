@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Mathf;
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed;
     
     private float horizontal;
+
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -25,5 +28,6 @@ public class Movement : MonoBehaviour
     {
         Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        animator.SetFloat("Speed", Abs(rb.velocity.x));
     }
 }

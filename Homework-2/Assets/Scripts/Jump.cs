@@ -7,6 +7,8 @@ public class Jump : MonoBehaviour
     bool isJumping = false;
     bool isOnGround = false;
 
+    public Animator animator;
+
     // Update is called once per frame
     void Update()
     {
@@ -14,6 +16,8 @@ public class Jump : MonoBehaviour
         {
             isJumping = Input.GetButtonDown("Jump") && isOnGround;
         }
+        
+        animator.SetBool("IsJumping", isJumping);
     }
 
     void FixedUpdate() 
