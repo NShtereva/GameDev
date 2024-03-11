@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class PeriodicMotion : MonoBehaviour
 {
     Rigidbody2D rb2d;
     float horizontal = -1;

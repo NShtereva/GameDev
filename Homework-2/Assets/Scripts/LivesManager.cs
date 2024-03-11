@@ -9,6 +9,8 @@ public class LivesManager : MonoBehaviour
     [SerializeField] GameObject heart2;
     [SerializeField] GameObject heart3;
 
+    public Animator animator;
+
     Rigidbody2D rb2d;
     byte count;
 
@@ -19,9 +21,14 @@ public class LivesManager : MonoBehaviour
         count = 0;
     }
 
+    void Update()
+    {
+        animator.SetBool("IsAttacked", false);
+    }
+
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        if(collider2D.gameObject.tag == "OutOfMap")
+        if(collider2D.gameObject.tag == "OutOfMap" || collider2D.gameObject.tag == "Enemy")
         {
             count++;
 
@@ -32,6 +39,11 @@ public class LivesManager : MonoBehaviour
                 case 3: heart1.SetActive(false); break;
             }
 
+            animator.SetBool("IsAttacked", true);
+        }
+
+        if(collider2D.gameObject.tag == "OutOfMap")
+        {
             rb2d.transform.position = start.transform.position;
         }
     }
