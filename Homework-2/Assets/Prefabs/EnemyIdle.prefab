@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2584305541261218838}
   - component: {fileID: 4378225023660367381}
   - component: {fileID: 2014785492794524087}
+  - component: {fileID: 7247065768090846969}
   - component: {fileID: 3776698685733165023}
   m_Layer: 0
   m_Name: EnemyIdle
@@ -232,6 +233,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ffa2be613347143a8c3e39e32497ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7247065768090846969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8469617180697140667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a94a800fdcdbf4f9850766f265f370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3776698685733165023}
 --- !u!95 &3776698685733165023
 Animator:
   serializedVersion: 5
