@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LivesManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class LivesManager : MonoBehaviour
     [SerializeField] GameObject heart1;
     [SerializeField] GameObject heart2;
     [SerializeField] GameObject heart3;
+    [SerializeField] GameObject loseState;
 
     public Animator animator;
 
@@ -40,6 +42,12 @@ public class LivesManager : MonoBehaviour
             }
 
             animator.SetBool("IsAttacked", true);
+        }
+
+        if(count == 3)
+        {
+            loseState.SetActive(true);
+            SceneManager.LoadScene(0);
         }
 
         if(collider2D.gameObject.tag == "OutOfMap")

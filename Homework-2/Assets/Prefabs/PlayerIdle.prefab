@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  animator: {fileID: 0}
 --- !u!114 &7566302464017386573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eadf8a0f2886afb42b09d6a7ad0cc7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!114 &1127901300306985228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7995ffd82ac95f84088439a673916e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winState: {fileID: 0}
   key1: {fileID: 0}
   key2: {fileID: 0}
   key3: {fileID: 0}
@@ -242,10 +245,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255f2a27d5a24974f91a5e81ca1b5bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseState: {fileID: 0}
   start: {fileID: 0}
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &5937439597841350405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +258,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6224113703335040798}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e292e3feca4f33047a1553a6903a2f91, type: 3}
   m_Name: 
