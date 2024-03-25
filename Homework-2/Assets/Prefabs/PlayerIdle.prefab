@@ -81,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 47968901c535c534aa65fe15ac5a77da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -229,10 +229,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7995ffd82ac95f84088439a673916e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winState: {fileID: 0}
   key1: {fileID: 0}
   key2: {fileID: 0}
   key3: {fileID: 0}
+  winState: {fileID: 0}
 --- !u!114 &7055670081637727714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,11 +245,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255f2a27d5a24974f91a5e81ca1b5bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loseState: {fileID: 0}
   start: {fileID: 0}
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
+  loseState: {fileID: 0}
   animator: {fileID: 0}
 --- !u!114 &5937439597841350405
 MonoBehaviour:
