@@ -39,7 +39,7 @@ public class CollectingKeys : MonoBehaviour
         if(collider2D.gameObject.tag == "Finish" && count == 3)
         {
             winState.SetActive(true);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
     }
 }
