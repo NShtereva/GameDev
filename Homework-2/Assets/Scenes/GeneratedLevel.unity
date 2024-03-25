@@ -308,6 +308,10 @@ PrefabInstance:
       propertyPath: winState
       value: 
       objectReference: {fileID: 10352034}
+    - target: {fileID: 9202702411104606286, guid: 3901f70973e1cbb4785d7d3c91873b1c, type: 3}
+      propertyPath: start
+      value: 
+      objectReference: {fileID: 1167151207}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
