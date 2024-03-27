@@ -1,13 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Jump : MonoBehaviour
 {
     bool isJumping = false;
     bool isOnGround = false;
 
+    private AudioSource jumpSound;
+    
     public Animator animator;
+
+    void Start()
+    {
+        jumpSound = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,6 +35,7 @@ public class Jump : MonoBehaviour
         if(isJumping)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+            jumpSound.Play();
             isJumping = false;
         }
     }
