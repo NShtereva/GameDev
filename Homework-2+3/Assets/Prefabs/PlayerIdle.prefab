@@ -15,10 +15,8 @@ GameObject:
   - component: {fileID: 317976135220715928}
   - component: {fileID: 7566302464017386573}
   - component: {fileID: 1127901300306985228}
-  - component: {fileID: 9202702411104606286}
   - component: {fileID: 7241451421858420477}
   - component: {fileID: 7055670081637727714}
-  - component: {fileID: 5937439597841350405}
   - component: {fileID: 8409866740794259555}
   m_Layer: 0
   m_Name: PlayerIdle
@@ -205,19 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ffa2be613347143a8c3e39e32497ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9202702411104606286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6224113703335040798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fb566f2593c27b4eb70b3213e535270, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: {fileID: 0}
 --- !u!114 &7241451421858420477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,25 +237,6 @@ MonoBehaviour:
   heart3: {fileID: 0}
   loseState: {fileID: 0}
   animator: {fileID: 8409866740794259555}
---- !u!114 &5937439597841350405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6224113703335040798}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e292e3feca4f33047a1553a6903a2f91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: {fileID: 0}
-  heart1: {fileID: 0}
-  heart2: {fileID: 0}
-  heart3: {fileID: 0}
-  key1: {fileID: 0}
-  key2: {fileID: 0}
-  key3: {fileID: 0}
 --- !u!95 &8409866740794259555
 Animator:
   serializedVersion: 5

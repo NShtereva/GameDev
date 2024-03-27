@@ -7,25 +7,21 @@ public class LevelGeneration : MonoBehaviour
 {
     [SerializeField] private int minNumberOfPlatforms = 10;
     [SerializeField] private int maxNumberOfPlatforms = 20;
+    
     public GameObject platform;
     public GameObject background;
     public GameObject finish;
     public GameObject key;
+    public GameObject enemy;
+    public GameObject jumpingPad;
 
     private int numberOfPlatforms;
     private float offset = 2.2f, bgOffset = 20f;
-    private int firstKeyIndex, secondKeyIndex, thirdKeyIndex;
 
     // Start is called before the first frame update
     void Start()
     {
         numberOfPlatforms = Random.Range(minNumberOfPlatforms, maxNumberOfPlatforms);
-
-        int temp = numberOfPlatforms / 3;
-        firstKeyIndex = Random.Range(0, temp);
-        secondKeyIndex = Random.Range(temp + 1, 2 * temp);
-        thirdKeyIndex = Random.Range(2 * temp + 1, numberOfPlatforms);
-
         generateThePlatforms();
     }
 
@@ -38,24 +34,20 @@ public class LevelGeneration : MonoBehaviour
             Vector3 position = new Vector3(prevPosition.x, prevPosition.y + offset, prevPosition.z);
             GameObject currentPlatform = Instantiate(platform, position, Quaternion.identity);
 
-            generateNewKey(i, position);
-
             prevPosition = currentPlatform.transform.position;
             correctPosition(ref prevPosition);
 
             generateNewBackground(i);
         }
 
-        lastPlatformGeneration(prevPosition);
-    }
+        GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
+        int size = platforms.Length;
 
-    private void generateNewKey(int index, Vector3 position)
-    {
-        if(index == firstKeyIndex || index == secondKeyIndex || index == thirdKeyIndex)
-        {
-            Vector3 keyPosition = new Vector3(position.x, position.y + 1, position.z);
-            Instantiate(key, keyPosition, Quaternion.identity);
-        }
+        generateGameObject(ref platforms, ref size, 3, key);
+        generateGameObject(ref platforms, ref size, 2, jumpingPad);
+        //generateGameObject(ref platforms, ref size, 2, enemy);
+
+        lastPlatformGeneration(prevPosition);
     }
 
     private void correctPosition(ref Vector3 position)
@@ -74,7 +66,7 @@ public class LevelGeneration : MonoBehaviour
 
     private void generateNewBackground(int index)
     {
-        if(index % 6 == 0)
+        if(index % 5 == 0)
         {
             Vector3 currPosition = background.transform.position;
             Vector3 newPosition = new Vector3(currPosition.x, currPosition.y + bgOffset, currPosition.z);
@@ -82,6 +74,32 @@ public class LevelGeneration : MonoBehaviour
             GameObject currentBackground = Instantiate(background, newPosition, Quaternion.identity);
 
             bgOffset += 20f;
+        }
+    }
+
+    private void generateGameObject(ref GameObject[] platforms, ref int size, int numberOfObjects, GameObject gameObjectToAdd)
+    {
+        int counter = 0,
+            from = 1, to = size / numberOfObjects;
+
+        while(counter != numberOfObjects)
+        {
+            int index = Random.Range(from, to);
+            if(index >= 0 && index <= numberOfPlatforms)
+            {
+                Vector3 position = platforms[index].transform.position;
+
+                Vector3 newPosition = new Vector3(position.x, position.y + 1, position.z);
+                Instantiate(gameObjectToAdd, newPosition, Quaternion.identity);
+
+                counter++;
+
+                from = to + 1;
+                to += to;
+
+                (platforms[index], platforms[size - 1]) = (platforms[size - 1], platforms[index]);
+                size--;
+            }
         }
     }
 

@@ -452,11 +452,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5713818146526201557, guid: 04cb9dff8ae0be44a913419434e42121, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -246.77
+      value: -255.38
       objectReference: {fileID: 0}
     - target: {fileID: 5713818146526201557, guid: 04cb9dff8ae0be44a913419434e42121, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -235.36
+      value: -231.34
       objectReference: {fileID: 0}
     - target: {fileID: 6130525555657518025, guid: 04cb9dff8ae0be44a913419434e42121, type: 3}
       propertyPath: m_Pivot.x
@@ -742,6 +742,8 @@ MonoBehaviour:
   background: {fileID: 1674439730}
   finish: {fileID: 10352034}
   key: {fileID: 709349553558305180, guid: 4b58ad1cf76323044bf2658cadd23f64, type: 3}
+  enemy: {fileID: 8469617180697140667, guid: d2c773fccb801304e95c54e89c052057, type: 3}
+  jumpingPad: {fileID: 7709699596102131567, guid: dfaea270576db3744afd8883997cba68, type: 3}
 --- !u!114 &767782616
 MonoBehaviour:
   m_ObjectHideFlags: 0
