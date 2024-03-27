@@ -411,7 +411,7 @@ PrefabInstance:
     - target: {fileID: 7241451421858420477, guid: 3901f70973e1cbb4785d7d3c91873b1c, type: 3}
       propertyPath: winState
       value: 
-      objectReference: {fileID: 10352034}
+      objectReference: {fileID: 669540126}
     - target: {fileID: 9202702411104606286, guid: 3901f70973e1cbb4785d7d3c91873b1c, type: 3}
       propertyPath: start
       value: 
@@ -441,6 +441,10 @@ PrefabInstance:
     - target: {fileID: 2925726452244517801, guid: 04cb9dff8ae0be44a913419434e42121, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033305462713670984, guid: 04cb9dff8ae0be44a913419434e42121, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4802949017131209123, guid: 04cb9dff8ae0be44a913419434e42121, type: 3}
       propertyPath: m_IsActive
@@ -547,6 +551,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04cb9dff8ae0be44a913419434e42121, type: 3}
+--- !u!1 &669540126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7329465019545360727, guid: 04cb9dff8ae0be44a913419434e42121, type: 3}
+  m_PrefabInstance: {fileID: 669540125}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &725276001
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class LevelGeneration : MonoBehaviour
         generateThePlatforms();
     }
 
-    void generateThePlatforms()
+    private void generateThePlatforms()
     {
         Vector3 prevPosition = platform.transform.position;
 
@@ -38,37 +38,56 @@ public class LevelGeneration : MonoBehaviour
             Vector3 position = new Vector3(prevPosition.x, prevPosition.y + offset, prevPosition.z);
             GameObject currentPlatform = Instantiate(platform, position, Quaternion.identity);
 
-            if(i == firstKeyIndex || i == secondKeyIndex || i == thirdKeyIndex)
-            {
-                Vector3 keyPosition = new Vector3(position.x, position.y + 1, position.z);
-                Instantiate(key, keyPosition, Quaternion.identity);
-            }
+            generateNewKey(i, position);
 
             prevPosition = currentPlatform.transform.position;
+            correctPosition(ref prevPosition);
 
-            if(Mathf.Abs(prevPosition.x - prevPosition.x * -1) > 10)
-            {
-                prevPosition.x = prevPosition.x > 0 ? prevPosition.x - 3 : prevPosition.x + 3;
-            } 
-            else
-            {
-                prevPosition.x *= -1;
-            }    
-
-            prevPosition.y += offset;
-
-            if(i % 6 == 0)
-            {
-                Vector3 currPosition = background.transform.position;
-                Vector3 newPosition = new Vector3(currPosition.x, currPosition.y + bgOffset, currPosition.z);
-
-                GameObject currentBackground = Instantiate(background, newPosition, Quaternion.identity);
-
-                bgOffset += 20f;
-            }
+            generateNewBackground(i);
         }
 
-        Vector3 lastPosition = new Vector3(prevPosition.x, prevPosition.y + offset, prevPosition.z);
+        lastPlatformGeneration(prevPosition);
+    }
+
+    private void generateNewKey(int index, Vector3 position)
+    {
+        if(index == firstKeyIndex || index == secondKeyIndex || index == thirdKeyIndex)
+        {
+            Vector3 keyPosition = new Vector3(position.x, position.y + 1, position.z);
+            Instantiate(key, keyPosition, Quaternion.identity);
+        }
+    }
+
+    private void correctPosition(ref Vector3 position)
+    {
+        if(Mathf.Abs(position.x - position.x * -1) > 10)
+        {
+            position.x = position.x > 0 ? position.x - 3 : position.x + 3;
+        } 
+        else
+        {
+            position.x *= -1;
+        }    
+
+        position.y += offset;
+    }
+
+    private void generateNewBackground(int index)
+    {
+        if(index % 6 == 0)
+        {
+            Vector3 currPosition = background.transform.position;
+            Vector3 newPosition = new Vector3(currPosition.x, currPosition.y + bgOffset, currPosition.z);
+
+            GameObject currentBackground = Instantiate(background, newPosition, Quaternion.identity);
+
+            bgOffset += 20f;
+        }
+    }
+
+    private void lastPlatformGeneration(Vector3 position)
+    {
+        Vector3 lastPosition = new Vector3(position.x, position.y + offset, position.z);
         GameObject lastPlatform = Instantiate(platform, lastPosition, Quaternion.identity);
         finish.transform.position = new Vector3(lastPosition.x, lastPosition.y + 1.45f, lastPosition.z);
     }
