@@ -12,14 +12,11 @@ public class LivesManager : MonoBehaviour
     [SerializeField] GameObject loseState;
 
     public Animator animator;
-
-    Rigidbody2D rb2d;
     byte count;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
         count = 0;
     }
 
@@ -52,7 +49,7 @@ public class LivesManager : MonoBehaviour
 
         if(collider2D.gameObject.tag == "OutOfMap")
         {
-            rb2d.transform.position = start.transform.position;
+            transform.position = new Vector3(start.transform.position.x, start.transform.position.y, transform.position.z);
         }
     }
 }
