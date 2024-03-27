@@ -559,6 +559,8 @@ GameObject:
   - component: {fileID: 725276003}
   - component: {fileID: 725276002}
   - component: {fileID: 725276005}
+  - component: {fileID: 725276006}
+  - component: {fileID: 725276007}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -653,6 +655,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1663715764}
+--- !u!114 &725276006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725276001}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece070b75abf05d4998acbdfc833819c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vignetteMaterial: {fileID: 2100000, guid: ee95797ed98cfdb4590e68d580992624, type: 2}
+--- !u!114 &725276007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725276001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaab3ea8f2d78974581f36d94a166e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heart2: {fileID: 973293834}
 --- !u!1 &767782613
 GameObject:
   m_ObjectHideFlags: 0
