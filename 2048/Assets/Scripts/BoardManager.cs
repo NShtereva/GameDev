@@ -23,8 +23,8 @@ public class BoardManager : MonoBehaviour
         values = new uint[SIZE * SIZE];
 
         var rnd = new System.Random();
-        values[rnd.Next(SIZE) * SIZE + rnd.Next(SIZE)] = 2;
-        values[rnd.Next(SIZE) * SIZE + rnd.Next(SIZE)] = 2;
+        values[rnd.Next(SIZE) * SIZE + rnd.Next(SIZE)] = (rnd.Next(SIZE) % 2 == 0 ? 2u : 4u);
+        values[rnd.Next(SIZE) * SIZE + rnd.Next(SIZE)] = (rnd.Next(SIZE) % 2 == 0 ? 2u : 4u);
 
         sum = 0;
 
@@ -351,14 +351,7 @@ public class BoardManager : MonoBehaviour
 
         if(count != MAX_ITER)
         {
-            if(rnd.Next(MAX_ITER) % 2 == 0)
-            {
-                values[row * SIZE + col] = 2;
-            }
-            else
-            {
-                values[row * SIZE + col] = 4;
-            }
+            values[row * SIZE + col] = (rnd.Next(MAX_ITER) % 2 == 0 ? 2u : 4u);
         }
     }
 
