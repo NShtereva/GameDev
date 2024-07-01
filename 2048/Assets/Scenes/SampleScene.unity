@@ -613,8 +613,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1296740146}
-        m_TargetAssemblyTypeName: NewGame, Assembly-CSharp
+      - m_Target: {fileID: 1038446916}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -1854,13 +1854,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681639685}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.119999856, y: -13.25, z: 0}
-  m_LocalScale: {x: 3, y: 2, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0041666515, y: -0.6510416, z: 0}
+  m_LocalScale: {x: 0.31249997, y: 0.20833331, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 626712140}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 7252372691807235166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &709630887
 GameObject:
@@ -1939,13 +1939,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709630887}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.19, y: -13.25, z: 0}
-  m_LocalScale: {x: 3, y: 2, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.34062496, y: -0.6510416, z: 0}
+  m_LocalScale: {x: 0.31249997, y: 0.20833331, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1416220037}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 7252372691807235166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &792358420 stripped
 GameObject:
@@ -2904,6 +2904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winState: {fileID: 1233551066}
   lossState: {fileID: 664909678}
+  score: {fileID: 252168169}
   numbers:
   - {fileID: 34801513}
   - {fileID: 1094417051}
@@ -3138,8 +3139,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1296740146}
-        m_TargetAssemblyTypeName: NewGame, Assembly-CSharp
+      - m_Target: {fileID: 1038446916}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -3549,7 +3550,6 @@ GameObject:
   - component: {fileID: 1296740145}
   - component: {fileID: 1296740144}
   - component: {fileID: 1296740143}
-  - component: {fileID: 1296740146}
   m_Layer: 5
   m_Name: NewGame
   m_TagString: Untagged
@@ -3570,7 +3570,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 91706644}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 7252372691807235166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3640,18 +3640,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1296740146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296740141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5007d862397d1504fa5dee2f0a7073ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1323210150
 GameObject:
   m_ObjectHideFlags: 0
@@ -3998,7 +3986,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1164537957}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 7252372691807235166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5134,8 +5122,20 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5207653551699450625, guid: acc16b8df8dd5e54081dfb43207ae5c5, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1388353271}
+    - targetCorrespondingSourceObject: {fileID: 5207653551699450625, guid: acc16b8df8dd5e54081dfb43207ae5c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1323210154}
+    - targetCorrespondingSourceObject: {fileID: 5207653551699450625, guid: acc16b8df8dd5e54081dfb43207ae5c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 709630889}
+    - targetCorrespondingSourceObject: {fileID: 5207653551699450625, guid: acc16b8df8dd5e54081dfb43207ae5c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 681639687}
+    - targetCorrespondingSourceObject: {fileID: 5207653551699450625, guid: acc16b8df8dd5e54081dfb43207ae5c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1296740142}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3383025132099137044, guid: acc16b8df8dd5e54081dfb43207ae5c5, type: 3}
       insertIndex: -1
@@ -5193,6 +5193,7 @@ MonoBehaviour:
   - {fileID: 1293481518}
   - {fileID: 998385559}
   score: {fileID: 252168169}
+  bestScore: {fileID: 1710486516}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5200,9 +5201,5 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 520843219}
   - {fileID: 649154805}
-  - {fileID: 1388353271}
   - {fileID: 7252372691807235165}
-  - {fileID: 709630889}
-  - {fileID: 681639687}
-  - {fileID: 1296740142}
   - {fileID: 1038446915}

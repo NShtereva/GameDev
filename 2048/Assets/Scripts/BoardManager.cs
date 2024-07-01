@@ -9,6 +9,7 @@ public class BoardManager : MonoBehaviour
     [SerializeField] private GameObject[] board;
     [SerializeField] private GameObject[] numbers;
     [SerializeField] private GameObject score;
+    [SerializeField] private GameObject bestScore;
 
     uint[] values;
 
@@ -109,6 +110,11 @@ public class BoardManager : MonoBehaviour
         }
 
         score.GetComponent<TMPro.TextMeshProUGUI>().text = sum.ToString();
+    
+        if(sum > uint.Parse(bestScore.GetComponent<TMPro.TextMeshProUGUI>().text))
+        {
+            bestScore.GetComponent<TMPro.TextMeshProUGUI>().text = score.GetComponent<TMPro.TextMeshProUGUI>().text;
+        }
     }
 
     // [i][j] -> [k] : k = i * SIZE + j
