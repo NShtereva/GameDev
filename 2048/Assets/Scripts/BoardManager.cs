@@ -28,7 +28,7 @@ public class BoardManager : MonoBehaviour
 
         sum = 0;
 
-        //ChangeColors();
+        ChangeColors();
         ConvertToString();      
     }
 
@@ -42,7 +42,7 @@ public class BoardManager : MonoBehaviour
             MoveUp();
             AddNewNode();
 
-            //ChangeColors();
+            ChangeColors();
             ConvertToString();
         }
 
@@ -53,7 +53,7 @@ public class BoardManager : MonoBehaviour
             MoveDown();
             AddNewNode();
 
-            //ChangeColors();
+            ChangeColors();
             ConvertToString();
         }
 
@@ -64,7 +64,7 @@ public class BoardManager : MonoBehaviour
             MoveLeft();
             AddNewNode();
 
-            //ChangeColors();
+            ChangeColors();
             ConvertToString();
         }
 
@@ -75,7 +75,7 @@ public class BoardManager : MonoBehaviour
             MoveRight();
             AddNewNode();
 
-            //ChangeColors();
+            ChangeColors();
             ConvertToString();
         }
     }
@@ -361,30 +361,23 @@ public class BoardManager : MonoBehaviour
         {
             switch(values[i])
             {
-                case    0: board[i].GetComponent<Renderer>().material.color = new Color(197, 175, 175); break;
-                case    2: board[i].GetComponent<Renderer>().material.color = new Color(238, 228, 218); break;
-                case    4: board[i].GetComponent<Renderer>().material.color = new Color(237, 224, 200); break;
-                case    8: board[i].GetComponent<Renderer>().material.color = new Color(242, 177, 121); break;
-                case   16: board[i].GetComponent<Renderer>().material.color = new Color(245, 149, 99); break;
-                case   32: board[i].GetComponent<Renderer>().material.color = new Color(246, 124, 95); break;
-                case   64: board[i].GetComponent<Renderer>().material.color = new Color(246,  94, 59); break;
-                case  128: board[i].GetComponent<Renderer>().material.color = new Color(237, 207, 114); break;
-                case  256: board[i].GetComponent<Renderer>().material.color = new Color(237, 204, 97); break;
-                case  512: board[i].GetComponent<Renderer>().material.color = new Color(237, 200, 80); break;
-                case 1024: board[i].GetComponent<Renderer>().material.color = new Color(237, 197, 63); break;
-                case 2048: board[i].GetComponent<Renderer>().material.color = new Color(237, 194, 46); break;
+                case    0: board[i].GetComponent<Renderer>().material.color = new Color(0.773f, 0.686f, 0.686f, 0.1f); break;
+                case    2: board[i].GetComponent<Renderer>().material.color = new Color(0.933f, 0.894f, 0.855f, 0.5f); break;
+                case    4: board[i].GetComponent<Renderer>().material.color = new Color(0.929f, 0.878f, 0.784f, 0.5f); break;
+                case    8: board[i].GetComponent<Renderer>().material.color = new Color(0.949f, 0.694f, 0.475f, 0.5f); break;
+                case   16: board[i].GetComponent<Renderer>().material.color = new Color(0.961f, 0.584f, 0.388f, 0.5f); break;
+                case   32: board[i].GetComponent<Renderer>().material.color = new Color(0.965f, 0.486f, 0.373f, 0.5f); break;
+                case   64: board[i].GetComponent<Renderer>().material.color = new Color(0.965f, 0.369f, 0.231f, 0.5f); break;
+                case  128: board[i].GetComponent<Renderer>().material.color = new Color(0.929f, 0.812f, 0.447f, 0.5f); break;
+                case  256: board[i].GetComponent<Renderer>().material.color = new Color(0.929f, 0.800f, 0.380f, 0.5f); break;
+                case  512: board[i].GetComponent<Renderer>().material.color = new Color(0.929f, 0.784f, 0.314f, 0.5f); break;
+                case 1024: board[i].GetComponent<Renderer>().material.color = new Color(0.929f, 0.773f, 0.247f, 0.5f); break;
+                case 2048: board[i].GetComponent<Renderer>().material.color = new Color(0.929f, 0.761f, 0.180f, 0.5f); break;
 
-                default: board[i].GetComponent<Renderer>().material.color = new Color(0, 0, 0); break;
+                default: board[i].GetComponent<Renderer>().material.color = new Color(0f, 0f, 0f, 1f); break;
             }
 
-            if(values[i] == 2 || values[i] == 4)
-            {
-                numbers[i].GetComponent<TMPro.TextMeshProUGUI>().color = new Color(128, 96, 96);
-            }
-            else
-            {
-                numbers[i].GetComponent<TMPro.TextMeshProUGUI>().color = new Color(255, 255, 255);
-            }
+            numbers[i].GetComponent<TMPro.TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 0.5f);
         }
     }
 }
