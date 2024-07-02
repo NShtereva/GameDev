@@ -71,9 +71,9 @@ public class GameManager : MonoBehaviour
                     count++;
                 }
 
-                if((j - 1 >= 0 && values[i * SIZE + j] == values[i * SIZE + (j-1)])   ||    // values[i][j] == values[i][j-1]
-                   (i - 1 >= 0 && values[i * SIZE + j] == values[(i-1) * SIZE + j])   ||    // values[i][j] == values[i-1][j]
-                   (j + 1 < SIZE && values[i * SIZE + j] == values[i * SIZE + (j+1)]) ||    // values[i][j] == values[i][j+1]
+                if((j - 1 >= 0   && values[i * SIZE + j] == values[i * SIZE + (j-1)])   ||  // values[i][j] == values[i][j-1]
+                   (i - 1 >= 0   && values[i * SIZE + j] == values[(i-1) * SIZE + j])   ||  // values[i][j] == values[i-1][j]
+                   (j + 1 < SIZE && values[i * SIZE + j] == values[i * SIZE + (j+1)])   ||  // values[i][j] == values[i][j+1]
                    (i + 1 < SIZE && values[i * SIZE + j] == values[(i+1) * SIZE + j]))      // values[i][j] == values[i+1][j]
                 {
                     sameValues = true;
