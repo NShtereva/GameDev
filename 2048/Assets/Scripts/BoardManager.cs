@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.IO;
 
 public class BoardManager : MonoBehaviour
 {
@@ -21,12 +22,20 @@ public class BoardManager : MonoBehaviour
     void Start()
     {
         values = new uint[SIZE * SIZE];
-
-        var rnd = new System.Random();
-        values[rnd.Next(SIZE) * SIZE + rnd.Next(SIZE)] = (rnd.Next(SIZE) % 2 == 0 ? 2u : 4u);
-        values[rnd.Next(SIZE) * SIZE + rnd.Next(SIZE)] = (rnd.Next(SIZE) % 2 == 0 ? 2u : 4u);
-
         sum = 0;
+
+        string path = Application.persistentDataPath + Path.DirectorySeparatorChar + "board.dat";
+        if(File.Exists(path))
+        {
+            LoadBoard();
+            ConvertToNumbers();
+        } 
+        else
+        {
+            var rnd = new System.Random();
+            values[rnd.Next(SIZE) * SIZE + rnd.Next(SIZE)] = (rnd.Next(SIZE) % 2 == 0 ? 2u : 4u);
+            values[rnd.Next(SIZE) * SIZE + rnd.Next(SIZE)] = (rnd.Next(SIZE) % 2 == 0 ? 2u : 4u);
+        }        
 
         ChangeColors();
         ConvertToString();      
@@ -80,6 +89,23 @@ public class BoardManager : MonoBehaviour
         }
     }
 
+    public void LoadBoard()
+    {
+        BoardData data = SaveSystem.LoadBoard();
+        if(data == null)
+        {
+            return;
+        }
+
+        score.GetComponent<TMPro.TextMeshProUGUI>().text = data.score;
+        bestScore.GetComponent<TMPro.TextMeshProUGUI>().text = data.bestScore;
+
+        for(ushort i = 0; i < numbers.Length; i++)
+        {
+            numbers[i].GetComponent<TMPro.TextMeshProUGUI>().text = data.numbers[i];
+        }
+    }
+
     void ConvertToNumbers()
     {
         for(uint i = 0; i < numbers.Length; i++)
@@ -93,6 +119,8 @@ public class BoardManager : MonoBehaviour
                 values[i] = uint.Parse(numbers[i].GetComponent<TMPro.TextMeshProUGUI>().text);
             }
         }
+
+        sum = uint.Parse(score.GetComponent<TMPro.TextMeshProUGUI>().text);
     }
 
     void ConvertToString()
